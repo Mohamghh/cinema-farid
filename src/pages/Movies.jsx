@@ -140,12 +140,13 @@ const Movies = () => {
               </button>
               {/* end menu btn */}
               {/* filter desk */}
-              <div className="filter__items">
+              <div  className="filter__items">
                 <select
                   className="filter__select"
                   name="genre"
                   id="filter__genre"
-                ><option value={0}>All genres</option>
+                  style={{ color: 'orange' }}
+                ><option  value={0}>All genres</option>
                 <option value={1}>Action/Adventure</option>
                 <option value={2}>Horror</option>
                 <option value={3}>Science Fiction</option>
@@ -186,7 +187,7 @@ const Movies = () => {
               <Link to="/Seances" className="item__play">
                 <i className="ti ti-ticket" />
               </Link>
-              <span className="item__rate item__rate--green">{film.prix}</span>
+              <span className="item__rate item__rate--green">{film.prix}dh</span>
               <button className="item__favorite" type="button">
                 <i className="ti ti-bookmark" />
               </button>
@@ -264,7 +265,7 @@ const Movies = () => {
     <div className="mfilter__select-wrap">
       <div className="sign__group">
         <select className="filter__select" name="mgenre" id="mfilter__genre">
-          <option value={0}>All genres</option>
+          <option  value={0}>All genres</option>
           <option value={1}>Action/Adventure</option>
           <option value={2}>Horror</option>
           <option value={3}>Science Fiction</option>

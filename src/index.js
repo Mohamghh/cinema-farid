@@ -12,6 +12,8 @@ import AddSeance from './pages/AddSeance';
 import Salles from './pages/Salles';
 import Seances from './pages/Seances';
 import Payement from './pages/Payement';
+import Receipt from './pages/Receipt';
+import { KeycloakProvider } from './keycloakContext'; // Import the Keycloak provider
 
 
 
@@ -60,7 +62,12 @@ const router = createBrowserRouter([
             {
               path: "/Payement",
               element: <Payement />
-              },      
+              }, 
+              
+              {
+                path: "/Receipt",
+                element: <Receipt />
+                },      
   ]
 }
 ]);
@@ -68,8 +75,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <KeycloakProvider> {/* Wrapping the entire app with KeycloakProvider */}
+      <RouterProvider router={router} />
+    </KeycloakProvider>
   </React.StrictMode>
 );
-
 reportWebVitals();

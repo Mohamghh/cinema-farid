@@ -47,7 +47,7 @@ const Seances = () => {
     try {
       await axios.post('http://localhost:8090/addreservation', reservationData);
       setAlertMessage({ type: 'success', text: 'Réservation confirmée avec succès !' });
-      navigate('/payement');
+      navigate('/payement', { state: { amount: selectedSeance.film.prix } });
       setShowReservationForm(false);
       setReservationDate('');
     } catch (error) {
