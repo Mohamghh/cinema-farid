@@ -1,9 +1,12 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from "react";
 import Navigation from '../components/Navigation'
 import Header from '../components/Header'
 import { Link } from 'react-router-dom';
+import { AuthContext } from "../AuthProvider"
+
 
 export default function Homepage() {
+  const { logout } = useContext(AuthContext);
   return (
     <>
       <>
@@ -104,11 +107,17 @@ export default function Homepage() {
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <i className="ti ti-logout" />
-                      Logout
-                    </a>
-                  </li>
+                        <a
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault(); // Prevent page reload
+                            logout(); // Call the logout function
+                          }}
+                        >
+                          <i className="ti ti-logout" />
+                          Logout
+                        </a>
+                      </li>
                 </ul>
               </div>
               {/* end dropdown */}
